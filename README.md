@@ -166,7 +166,7 @@ npx ts-node tests/ecommerce.test.ts
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/<your-username>/techloom-assessment.git
+git clone https://github.com/Praveena32/techloom-assessment.git
 cd techloom-assessment
 ```
 
