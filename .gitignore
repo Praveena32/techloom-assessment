@@ -6,5 +6,3 @@ dist/
 *.db-wal
 *.db-shm
 *.pdf
-SUBMISSION.md
-SUBMISSION_REPORT.html
