@@ -1,0 +1,62 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id            String      @id @default(uuid())
+  name          String
+  description   String
+  price         Float
+  stock         Int         // Available stock
+  reservedStock Int         @default(0) // Locked in checkout reservations
+  category      String
+  imageUrl      String
+  rating        Float       @default(4.8)
+  specs         String?     // JSON string of product specifications
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  orderItems    OrderItem[]
+}
+
+model Order {
+  id              String               @id @default(uuid())
+  orderNumber     String               @unique
+  customerEmail   String?
+  customerName    String?
+  shippingAddress String?
+  status          String               @default("PENDING") // PENDING, RESERVED, PAID, CANCELLED, REFUNDED, FAILED, EXPIRED
+  totalAmount     Float
+  idempotencyKey  String?              @unique
+  expiresAt       DateTime?            // 5 minutes from reservation
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+  items           OrderItem[]
+  payments        PaymentTransaction[]
+}
+
+model OrderItem {
+  id        String   @id @default(uuid())
+  orderId   String
+  productId String
+  quantity  Int
+  unitPrice Float
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id])
+}
+
+model PaymentTransaction {
+  id              String   @id @default(uuid())
+  orderId         String
+  type            String   @default("PAYMENT") // PAYMENT, REFUND
+  status          String   // SUCCESS, FAILED, TIMEOUT
+  amount          Float
+  gatewayResponse String?
+  idempotencyKey  String?
+  createdAt       DateTime @default(now())
+  order           Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}

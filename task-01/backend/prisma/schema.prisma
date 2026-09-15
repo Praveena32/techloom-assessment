@@ -1,0 +1,56 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id            String      @id @default(uuid())
+  name          String
+  description   String      @default("")
+  price         Float
+  stock         Int         // Available stock for new purchases
+  reservedStock Int         @default(0) // Locked in active reservations
+  category      String      @default("General")
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  orderItems    OrderItem[]
+}
+
+model Order {
+  id              String               @id @default(uuid())
+  orderNumber     String               @unique
+  status          String               @default("PENDING") // PENDING, RESERVED, PAID, CANCELLED, EXPIRED, FAILED
+  totalAmount     Float
+  idempotencyKey  String?              @unique
+  expiresAt       DateTime?            // Exactly 5 minutes from reservation
+  customerName    String?              @default("Walk-in Customer")
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+  items           OrderItem[]
+  payments        PaymentTransaction[]
+}
+
+model OrderItem {
+  id        String   @id @default(uuid())
+  orderId   String
+  productId String
+  quantity  Int
+  unitPrice Float
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id])
+}
+
+model PaymentTransaction {
+  id              String   @id @default(uuid())
+  orderId         String
+  status          String   // SUCCESS, FAILURE, TIMEOUT
+  amount          Float
+  gatewayResponse String?
+  idempotencyKey  String?
+  createdAt       DateTime @default(now())
+  order           Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
