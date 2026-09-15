@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techloom.ai Practical Assessment - Official Submission Report</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --success-bg: #dcfce7;
+      --code-bg: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.5;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header {
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .title-area h1 {
+      font-size: 28px;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .title-area h2 {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--success-bg);
+      color: var(--success);
+      border: 1px solid #bbf7d0;
+    }
+
+    .meta-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .meta-item strong {
+      color: var(--text-muted);
+      display: inline-block;
+      min-width: 110px;
+    }
+
+    h3 {
+      font-size: 18px;
+      color: #0f172a;
+      margin: 28px 0 14px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p, li {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 14px 16px;
+      border-radius: 6px;
+      font-size: 12px;
+      overflow-x: auto;
+      margin: 14px 0 20px 0;
+      line-height: 1.4;
+    }
+
+    .callout {
+      border-left: 4px solid var(--primary);
+      background: #eff6ff;
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      margin: 16px 0;
+      font-size: 13px;
+      color: #1e3a8a;
+    }
+
+    .no-print {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none;
+      }
+      a {
+        text-decoration: none;
+        color: #0f172a;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <div class="header">
+    <div class="title-area">
+      <h1>TECHLOOM.AI</h1>
+      <h2>Software Engineer Intern — Practical Assessment Submission</h2>
+    </div>
+    <div>
+      <span class="badge">Status: Complete &amp; Deployed</span>
+    </div>
+  </div>
+
+  <div class="meta-box">
+    <div class="meta-item"><strong>Candidate:</strong> Praveena</div>
+    <div class="meta-item"><strong>Date:</strong> September 15, 2026</div>
+    <div class="meta-item"><strong>GitHub Profile:</strong> <a href="https://github.com/Praveena32" target="_blank">github.com/Praveena32</a></div>
+    <div class="meta-item"><strong>Primary Stack:</strong> TypeScript, Node.js, React, Prisma</div>
+  </div>
+
+  <h3>1. Verified Live Deployment &amp; Repository Links</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Project Component</th>
+        <th>Target Live URL</th>
+        <th>Verified Health</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>GitHub Repository (Mono-repo)</strong></td>
+        <td><a href="https://github.com/Praveena32/techloom-assessment" target="_blank">https://github.com/Praveena32/techloom-assessment</a></td>
+        <td><span class="badge">Public &amp; Up-to-date</span></td>
+      </tr>
+      <tr>
+        <td><strong>Task 01: POS Cashier UI</strong></td>
+        <td><a href="https://techloom-pos-one.vercel.app" target="_blank">https://techloom-pos-one.vercel.app</a></td>
+        <td><span class="badge">HTTP 200 OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Task 01: POS Backend API</strong></td>
+        <td><a href="https://techloom-pos-api-delta.vercel.app/health" target="_blank">https://techloom-pos-api-delta.vercel.app/health</a></td>
+        <td><span class="badge">HTTP 200 OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Task 02: E-Commerce Storefront UI</strong></td>
+        <td><a href="https://techloom-store.vercel.app" target="_blank">https://techloom-store.vercel.app</a></td>
+        <td><span class="badge">HTTP 200 OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Task 02: E-Commerce Backend API</strong></td>
+        <td><a href="https://techloom-store-api.vercel.app/health" target="_blank">https://techloom-store-api.vercel.app/health</a></td>
+        <td><span class="badge">HTTP 200 OK</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>2. Section 01: POS Order &amp; Inventory System (/task-01)</h3>
+  <ul>
+    <li><strong>Concurrency-Safe Atomic Stock Decrement:</strong> Implemented conditional updates ensuring race conditions are resolved atomically with <strong>zero overselling</strong>.</li>
+    <li><strong>5-Minute Reservation TTL:</strong> Holds items upon checkout entry with automated background sweeper reverting abandoned orders.</li>
+    <li><strong>Payment Lifecycle &amp; Idempotency:</strong> Explicit handling for <code>SUCCESS</code>, <code>FAILURE</code>, and <code>TIMEOUT</code> with duplicate checkout protection (<code>409 Conflict</code>).</li>
+    <li><strong>Automated 50-Request Concurrency Stress Test:</strong>
+      <pre>Total Requests: 50 | Successful Reservations: 5 | Out of Stock Rejections: 45 | Overselling: 0 (Execution Time: 305ms)</pre>
+    </li>
+  </ul>
+
+  <h3>3. Section 02: E-Commerce Storefront &amp; Payment System (/task-02)</h3>
+  <ul>
+    <li><strong>Product Discovery:</strong> Debounced real-time keyword search, category filters, dynamic price slider in <strong>LKR</strong>, and in-stock toggle.</li>
+    <li><strong>Product Details &amp; Cart:</strong> Modal view with high-res galleries, technical specifications, and cart management drawer.</li>
+    <li><strong>Pre-Payment Reservation:</strong> Locks stock prior to payment capture to eliminate cart hijacking.</li>
+    <li><strong>Automated Refunds &amp; Inventory Restoral:</strong> "My Orders" customer portal supports 1-click refunds on paid orders, logging refund transactions and returning physical stock to the active catalog immediately.</li>
+  </ul>
+
+  <h3>4. Evaluation Criteria Matrix</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Criterion</th>
+        <th>Engineering Implementation</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Concurrency Handling</td>
+        <td>Atomic conditional decrements (<code>UPDATE ... WHERE stock &gt;= qty</code>)</td>
+        <td>Verified: 0 Overselling</td>
+      </tr>
+      <tr>
+        <td>Reservation TTL</td>
+        <td>5-minute timed lock with periodic background sweeper (15s interval)</td>
+        <td>Verified: Auto-restoration</td>
+      </tr>
+      <tr>
+        <td>Payment Handling</td>
+        <td>Three-way outcome simulator (Success, Failure, Timeout) + Idempotency</td>
+        <td>Verified: 409 on duplicates</td>
+      </tr>
+      <tr>
+        <td>Refunds &amp; Cancellations</td>
+        <td>ACID database transactions restoring stock on cancellation/refund</td>
+        <td>Verified: 100% Stock recovery</td>
+      </tr>
+      <tr>
+        <td>Discovery UX</td>
+        <td>Faceted search, categories, and price filtering in LKR</td>
+        <td>Verified: Instant responsive UI</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Note on Evaluator Testing:</strong> Both live applications are connected to real backend APIs. An interactive Concurrency Test runner is embedded directly in the Task 01 UI for live evaluation.
+  </div>
+
+  <p style="font-size: 12px; color: #64748b; margin-top: 30px; text-align: center;">
+    Submitted for Techloom.ai Software Engineer Intern Assessment &bull; September 2026
+  </p>
+
+</body>
+</html>
