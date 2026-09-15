@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "Techloom.ai Practical Assessment - Tasks 01 and 02",
   "scripts": {
+    "dev": "concurrently -n \"T1-API,T1-WEB,T2-API,T2-WEB\" -c \"blue,cyan,green,magenta\" \"npm run dev:task1-backend\" \"npm run dev:task1-frontend\" \"npm run dev:task2-backend\" \"npm run dev:task2-frontend\"",
+    "dev:task1": "concurrently -n \"T1-API,T1-WEB\" -c \"blue,cyan\" \"npm run dev:task1-backend\" \"npm run dev:task1-frontend\"",
+    "dev:task2": "concurrently -n \"T2-API,T2-WEB\" -c \"green,magenta\" \"npm run dev:task2-backend\" \"npm run dev:task2-frontend\"",
     "dev:task1-backend": "cd task-01/backend && npm run dev",
     "dev:task1-frontend": "cd task-01/frontend && npm run dev",
     "dev:task2-backend": "cd task-02/backend && npm run dev",
     "dev:task2-frontend": "cd task-02/frontend && npm run dev",
     "test:concurrency": "cd task-01/backend && npm run test:concurrency",
     "test:ecommerce": "cd task-02/backend && npx ts-node tests/ecommerce.test.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
   }
 }
