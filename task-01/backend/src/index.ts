@@ -59,31 +59,33 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-const server = app.listen(PORT, async () => {
-  await initPrismaDatabase();
+// Auto-initialize DB (sets WAL mode if SQLite)
+initPrismaDatabase();
 
-  console.log(`=================================================`);
-  console.log(`🚀 POS Backend running on http://localhost:${PORT}`);
-  console.log(`📦 Health check: http://localhost:${PORT}/health`);
-  console.log(`📡 API Endpoints: http://localhost:${PORT}/api/products`);
-  console.log(`=================================================`);
+if (!process.env.VERCEL) {
+  const server = app.listen(PORT, async () => {
+    console.log(`=================================================`);
+    console.log(`🚀 POS Backend running on http://localhost:${PORT}`);
+    console.log(`📦 Health check: http://localhost:${PORT}/health`);
+    console.log(`📡 API Endpoints: http://localhost:${PORT}/api/products`);
+    console.log(`=================================================`);
 
-  // Start background reservation cleanup sweeper
-  startReservationSweeper();
-});
-
-// Graceful shutdown
-async function gracefulShutdown(signal: string) {
-  console.log(`\nReceived ${signal}. Shutting down gracefully...`);
-  stopReservationSweeper();
-  server.close(async () => {
-    await prisma.$disconnect();
-    console.log('Server closed and database disconnected.');
-    process.exit(0);
+    // Start background reservation cleanup sweeper
+    startReservationSweeper();
   });
-}
 
-process.on('SIGINT', () => gracefulShutdown('SIGINT'));
-process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+  const gracefulShutdown = async (signal: string) => {
+    console.log(`\nReceived ${signal}. Shutting down gracefully...`);
+    stopReservationSweeper();
+    server.close(async () => {
+      await prisma.$disconnect();
+      console.log('Server closed and database disconnected.');
+      process.exit(0);
+    });
+  };
+
+  process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+  process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+}
 
 export default app;

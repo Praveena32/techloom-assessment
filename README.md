@@ -215,11 +215,11 @@ npm run dev
    git add .
    git commit -m "feat: complete Techloom assessment tasks 01 and 02"
    git branch -M main
-   git remote add origin https://github.com/<username>/techloom-assessment.git
+   git remote add origin https://github.com/Praveena32/techloom-assessment.git
    git push -u origin main
    ```
 2. **Deploy Backends on Render (Free Tier)**:
-   * Create a Web Service for `task-01/backend` (Root Directory: `task-01/backend`, Build Command: `npm install && npx prisma db push && npx ts-node prisma/seed.ts && npm run build`, Start Command: `npm start`).
+   * Create a Web Service for `task-01/backend` (Root Directory: `task-01/backend`, Build Command: `npm install && npm run vercel-build`, Start Command: `npm start`).
    * Create a Web Service for `task-02/backend` (Root Directory: `task-02/backend`).
    * *(Optional)*: Provide a free PostgreSQL database URL from **Neon.tech** or **Supabase** in `DATABASE_URL`.
 3. **Deploy Frontends on Vercel (Free Tier)**:
