@@ -9,11 +9,11 @@
 
 | Project | Component | Live Deployment / Repository Link | Tech Stack |
 | :--- | :--- | :--- | :--- |
-| **GitHub Repository** | Monorepo Root | `https://github.com/Praveena32/techloom-assessment` | TypeScript, Node.js, React |
-| **Task 01: POS System** | Frontend UI | `https://techloom-pos-one.vercel.app` *(or your Vercel URL)* | React + Vite + TypeScript |
-| **Task 01: POS System** | Backend API | `https://techloom-pos-api.onrender.com` *(or your Render URL)* | Express + Prisma + SQLite/PostgreSQL |
-| **Task 02: E-Commerce** | Storefront UI | `https://techloom-store.vercel.app` *(or your Vercel URL)* | React + Vite + TypeScript |
-| **Task 02: E-Commerce** | Backend API | `https://techloom-store-api.onrender.com` *(or your Render URL)* | Express + Prisma + SQLite/PostgreSQL |
+| **GitHub Repository** | Root | `https://github.com/Praveena32/techloom-assessment` | TypeScript, Node.js, React |
+| **Task 01: POS System** | Frontend UI | `https://techloom-pos-one.vercel.app` | React + Vite + TypeScript |
+| **Task 01: POS System** | Backend API | `https://techloom-pos-api-delta.vercel.app` | Express + Prisma + SQLite |
+| **Task 02: E-Commerce** | Storefront UI | `https://techloom-store.vercel.app`| React + Vite + TypeScript |
+| **Task 02: E-Commerce** | Backend API | `https://techloom-store-api.vercel.app` | Express + Prisma + SQLite |
 
 ---
 
