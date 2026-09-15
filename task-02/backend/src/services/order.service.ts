@@ -176,7 +176,7 @@ export class OrderService {
       return {
         order: updatedOrder,
         action: 'REFUNDED',
-        message: `Order refunded successfully ($${order.totalAmount.toFixed(2)}). Stock restored to storefront.`,
+        message: `Order refunded successfully (LKR ). Stock restored to storefront.`,
       };
     }
 

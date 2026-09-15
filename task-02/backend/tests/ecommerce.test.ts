@@ -43,7 +43,7 @@ async function runEcommerceTests() {
   });
 
   const order = checkoutRes.data.data;
-  console.log(`✅ Order reserved: ${order.orderNumber} (Status: ${order.status}, Total: $${order.totalAmount})`);
+  console.log(`✅ Order reserved: ${order.orderNumber} (Status: ${order.status}, Total: LKR ${order.totalAmount})`);
 
   // Verify stock decremented
   const checkStock1 = await axios.get(`${BASE_URL}/products/${targetProduct.id}`);

@@ -444,7 +444,7 @@ export default function App() {
               style={{ position: 'relative' }}
             >
               <ShoppingBag size={18} />
-              Cart (${cartSubtotal.toFixed(2)})
+              Cart (LKR {cartSubtotal.toFixed(2)})
               {cart.length > 0 && (
                 <span
                   style={{
@@ -573,7 +573,7 @@ export default function App() {
                   MAX PRICE
                 </label>
                 <span style={{ fontSize: '0.8rem', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                  ${maxPrice}
+                  LKR {maxPrice.toLocaleString()}
                 </span>
               </div>
               <input
@@ -740,7 +740,7 @@ export default function App() {
                       <div>
                         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 14 }}>
                           <span style={{ fontSize: '1.4rem', fontWeight: 800, fontFamily: 'var(--font-mono)', color: '#fff' }}>
-                            ${p.price.toFixed(2)}
+                            LKR {p.price.toFixed(2)}
                           </span>
                           {p.reservedStock > 0 && (
                             <span style={{ fontSize: '0.72rem', color: 'var(--accent-amber)' }}>
@@ -840,7 +840,7 @@ export default function App() {
                 <div>
                   <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 16 }}>
                     <span style={{ fontSize: '1.6rem', fontWeight: 800, fontFamily: 'var(--font-mono)', color: '#fff' }}>
-                      ${selectedProduct.price.toFixed(2)}
+                      LKR {selectedProduct.price.toFixed(2)}
                     </span>
                     <span
                       className={`store-badge ${
@@ -918,7 +918,7 @@ export default function App() {
                         {item.product.name}
                       </h5>
                       <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                        ${item.product.price.toFixed(2)}
+                        LKR {item.product.price.toFixed(2)}
                       </span>
                     </div>
 
@@ -955,7 +955,7 @@ export default function App() {
               <div style={{ padding: 20, borderTop: '1px solid var(--border)', background: 'rgba(0,0,0,0.3)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: '0.88rem', color: 'var(--text-muted)' }}>
                   <span>Subtotal</span>
-                  <span style={{ fontFamily: 'var(--font-mono)' }}>${cartSubtotal.toFixed(2)}</span>
+                  <span style={{ fontFamily: 'var(--font-mono)' }}>LKR {cartSubtotal.toFixed(2)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: '0.88rem', color: 'var(--text-muted)' }}>
                   <span>Delivery & Handling</span>
@@ -964,7 +964,7 @@ export default function App() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 18, fontSize: '1.2rem', fontWeight: 800, color: '#fff' }}>
                   <span>Total Due</span>
                   <span style={{ color: 'var(--accent-emerald)', fontFamily: 'var(--font-mono)' }}>
-                    ${cartSubtotal.toFixed(2)}
+                    LKR {cartSubtotal.toFixed(2)}
                   </span>
                 </div>
 
@@ -1102,7 +1102,7 @@ export default function App() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid var(--border)', marginBottom: 20 }}>
                   <span style={{ color: 'var(--text-muted)' }}>Total Amount to Pay:</span>
                   <span style={{ fontSize: '1.25rem', fontWeight: 800, fontFamily: 'var(--font-mono)', color: 'var(--accent-emerald)' }}>
-                    ${activeReservation.totalAmount.toFixed(2)}
+                    LKR {activeReservation.totalAmount.toFixed(2)}
                   </span>
                 </div>
 
@@ -1262,7 +1262,7 @@ export default function App() {
 
                         <div style={{ textAlign: 'right' }}>
                           <span style={{ fontSize: '1.2rem', fontWeight: 800, fontFamily: 'var(--font-mono)', color: 'var(--accent-emerald)' }}>
-                            ${ord.totalAmount.toFixed(2)}
+                            LKR {ord.totalAmount.toFixed(2)}
                           </span>
                         </div>
                       </div>
@@ -1278,7 +1278,7 @@ export default function App() {
                               {item.quantity}x {item.product?.name || 'Product'}
                             </span>
                             <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
-                              ${(item.unitPrice * item.quantity).toFixed(2)}
+                              LKR {(item.unitPrice * item.quantity).toFixed(2)}
                             </span>
                           </div>
                         ))}

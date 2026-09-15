@@ -650,7 +650,7 @@ export default function App() {
                               color: '#fff',
                             }}
                           >
-                            ${p.price.toFixed(2)}
+                            LKR {p.price.toFixed(2)}
                           </span>
                           {p.reservedStock > 0 && (
                             <span style={{ fontSize: '0.72rem', color: 'var(--accent-amber)' }}>
@@ -738,7 +738,7 @@ export default function App() {
                               fontFamily: 'var(--font-mono)',
                             }}
                           >
-                            ${item.product.price.toFixed(2)} each
+                            LKR {item.product.price.toFixed(2)} each
                           </p>
                         </div>
 
@@ -818,7 +818,7 @@ export default function App() {
                       }}
                     >
                       <span>Subtotal</span>
-                      <span style={{ fontFamily: 'var(--font-mono)' }}>${cartTotal.toFixed(2)}</span>
+                      <span style={{ fontFamily: 'var(--font-mono)' }}>LKR {cartTotal.toFixed(2)}</span>
                     </div>
                     <div
                       style={{
@@ -845,7 +845,7 @@ export default function App() {
                     >
                       <span>Total</span>
                       <span style={{ color: 'var(--accent-emerald)', fontFamily: 'var(--font-mono)' }}>
-                        ${cartTotal.toFixed(2)}
+                        LKR {cartTotal.toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -943,7 +943,7 @@ export default function App() {
                           </span>
                         </td>
                         <td style={{ fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
-                          ${p.price.toFixed(2)}
+                          LKR {p.price.toFixed(2)}
                         </td>
                         <td>
                           <span
@@ -1028,7 +1028,7 @@ export default function App() {
               <div>
                 <h2 style={{ fontSize: '1.25rem', fontWeight: 800 }}>Orders & Active Stock Reservations</h2>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-                  Tracks the full order lifecycle: PENDING $\rightarrow$ RESERVED $\rightarrow$ PAID / CANCELLED / EXPIRED
+                  Tracks the full order lifecycle: PENDING &rarr; RESERVED &rarr; PAID / CANCELLED / EXPIRED
                 </p>
               </div>
               <button onClick={fetchData} className="btn btn-secondary">
@@ -1076,7 +1076,7 @@ export default function App() {
                             </div>
                           </td>
                           <td style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--accent-emerald)' }}>
-                            ${o.totalAmount.toFixed(2)}
+                            LKR {o.totalAmount.toFixed(2)}
                           </td>
                           <td>
                             <span
@@ -1456,7 +1456,7 @@ export default function App() {
                     fontSize: '1.1rem',
                   }}
                 >
-                  ${activeReservation.totalAmount.toFixed(2)}
+                  LKR {activeReservation.totalAmount.toFixed(2)}
                 </span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -1617,7 +1617,7 @@ export default function App() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div>
                   <label style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-dim)' }}>
-                    PRICE ($)
+                    PRICE (LKR)
                   </label>
                   <input
                     type="number"
