@@ -9,7 +9,7 @@
 
 | Project | Component | Live Deployment / Repository Link | Tech Stack |
 | :--- | :--- | :--- | :--- |
-| **GitHub Repository** | Monorepo Root | `https://github.com/<your-username>/techloom-assessment` *(Replace with your GitHub repo)* | TypeScript, Node.js, React |
+| **GitHub Repository** | Monorepo Root | `https://github.com/Praveena32/techloom-assessment` | TypeScript, Node.js, React |
 | **Task 01: POS System** | Frontend UI | `https://techloom-pos.vercel.app` *(or your Vercel URL)* | React + Vite + TypeScript |
 | **Task 01: POS System** | Backend API | `https://techloom-pos-api.onrender.com` *(or your Render URL)* | Express + Prisma + SQLite/PostgreSQL |
 | **Task 02: E-Commerce** | Storefront UI | `https://techloom-store.vercel.app` *(or your Vercel URL)* | React + Vite + TypeScript |
